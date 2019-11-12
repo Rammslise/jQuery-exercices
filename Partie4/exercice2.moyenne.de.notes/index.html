@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 2</title>
+</head>
+<body>
+  <form>
+    <h2>Moyenne de Pépito :</h2>
+
+    <p>
+      <label for="geography">Géographie</label>
+      <input type="text" name="geographyNote" id="geographyNote" required>
+    </p>
+
+    <p>
+      <label for="history">Histoire</label>
+      <input type="text" name="historyNote" id="historyNote" required>
+    </p>
+
+    <p>
+      <label for="mathematical">Mathématiques </label>
+      <input type="text" name="mathematicalNote" id="mathematicalNote" required>
+    </p>
+
+    <p>
+      <label for="arts">Arts</label>
+      <input type="text" name="artsNote" id="artsNote" required>
+    </p>
+
+    <p>
+      <label for="english">Anglais</label>
+      <input type="text" name="englishNote" id="englishNote" required>
+    </p>
+
+    <input type="button" name="result" id="result" value="Valider">
+  </form>
+
+  <!-- intégration d'une div fantôme, afin de pouvoir l'intégrer au jquery -->
+  <div class="average"></div>
+
+  <script src="assets/js/jquery-3.4.1.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

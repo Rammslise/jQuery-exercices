@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 4</title>
+</head>
+<body>
+  <h2>Formulaire d'inscription</h2>
+
+  <form>
+    <p>
+      <label for="lastName">Votre Nom :</label>
+      <input type="text" name="lastName" id="lastName" placeholder="Champ obligatoire" />
+    </p>
+    <p>
+      <label for="firstName">Votre prénom :</label>
+      <input type="text" name="firstName" id="firstName" placeholder="Champ obligatoire" />
+    </p>
+    <p>
+      <label for="birthDate">Votre date de naissance :</label>
+      <input type="text" name="birthDate" id="birthDate" required placeholder="00/00/0000" />
+      <span class="validity"></span>
+    </p>
+    <label for="placeOfBirth">Votre lieu de naissance :</label>
+    <input type="text" name="placeOfBirth" id="placeOfBirth" placeholder="Champ obligatoire" />
+    <p>
+      <label for="job">Votre emploi actuel :</label>
+      <input type="text" name="job" id="job" placeholder="Champ obligatoire" />
+    </p>
+    <p>
+      <label for="company">Société ou employeur :</label>
+      <input type="text" name="company" id="company" placeholder="Champ obligatoire" />
+    </p>
+  </form>
+  
+  <input type="button" name="validate" id="validate" value="Valider" />
+
+  <script src="assets/js/jquery-3.4.1.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

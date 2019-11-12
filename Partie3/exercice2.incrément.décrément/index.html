@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 2</title>
+</head>
+<body>
+  <div>
+    <!-- Création d'un imput avec la valeur 0;
+         2 button pour le + et le - avec une id pour chaque -->
+    <label for="number">Résultat :<input type="text" name="number" value="0" id="clickNumber"></label>
+    <button type="button" id="buttonMore">+</button> <button type="button" id="buttonLess">-</button>
+  </div>
+  <script src="assets/js/jquery-3.4.1.js"></script>
+  <script>
+    let click = 0;
+    $(function(){
+      $('#buttonMore').click(function(){
+        click++;
+        $('#clickNumber').val(click);
+      });
+      $('#buttonLess').click(function(){
+        click--;
+        $('#clickNumber').val(click);
+      });
+    });
+  </script>
+</body>
+</html>

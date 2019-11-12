@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 3</title>
+</head>
+<body>
+  <div>
+    <label for="result">Le nombre à deviner est compris entre 0 et 100 <input type="text" name="number" value="0"></label>
+    <button type="button" name="button">Valider</button>
+  </div>
+  <script src="assets/js/jquery-3.4.1.js"></script>
+  <script>
+    $(function(){
+      // on créer une variable pour que l'ordi choisse un chiffe entre 0 et 100
+      let randomNumber = Math.floor(Math.random()*101);
+      //une variable pour le nombre d'essais
+      let essai = 0;
+      const numberRegex = /^[1-9]?[0-9]{1}$|^100$/;
+      $('button').click(function(){
+        let numberUser = Number($('input').val());
+        //On test la regex
+        if(numberRegex.test(numberUser)){
+          essai++;
+          if (randomNumber > numberUser){
+            alert('Le nombre est trop bas');
+          } else if (randomNumber < numberUser){
+            alert('Le nombre est trop haut');
+          } else {
+            alert ('Vous avez gagné en ' + essai + ' essai');
+          }
+        } else {
+          // si la régex est mauvaise
+          alert('Erreur');
+        }
+      });
+    });
+    /*if(numberRandom > numberUser && numberRegex.test(numberUser)){
+      $(alert('Plus'));
+    }
+    else if(numberRandom < numberUser && numberRegex.test(numberUser)){
+      $(alert('Moins'));
+    }
+    else if(numberRandom == numberUser && numberRegex.test(numberUser)){
+      $(alert('Correct vous avez mis '+essai+' essais!'));
+    }
+    else {
+      $(alert('Une erreure sur la saisie'))
+    }*/
+  </script>
+</body>
+</html>

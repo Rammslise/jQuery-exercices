@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 1</title>
+</head>
+<body>
+  <div>
+    <!-- label = permet de mettre un nom avec un cadre à remplir,
+         input = pour le nombre de clic,
+         button = pouvoir mettre un bouton afin de cliquer dessus,
+         Le tout est entouré d'une seule div -->
+    <label for="click">Nombres de clics<input type="text" id="validate"></label>
+    <button type="button" name="button">Cliquer</button>
+  </div>
+  <script src="assets/js/jquery-3.4.1.js"></script>
+  <script>
+  // variable click avec click++
+  let click = 0;
+    $(function(){
+      $('button').click(function(){
+        click++;
+        // val() pour afficher la valeur et le $('#clickNumber') pour l'afficher dans le input!
+        $('#validate').val(click);
+      });
+    });
+  </script>
+</body>
+</html>
