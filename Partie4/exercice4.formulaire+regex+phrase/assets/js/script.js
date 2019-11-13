@@ -1,7 +1,9 @@
 $(function(){
   //détermine les regex dont on a besoin, ici les lettres pour les noms et les chiffres pour la date de naissance.
   const regexName = /^[a-zA-ZÀ-ÿ’ -]+$/;
-  const regexNumber = /^[0-9]{2}[\/\-][0-9]{2}[\/\-][0-9]{4}$/;
+  const regexDate = /^[0-9]{2}[\/\-][0-9]{2}[\/\-][0-9]{4}$/;
+  const regexCity = /^[/a-zA-ZÀ-Ÿ' -]+$/;
+  const regexCompany = /^[\d/a-zA-ZÀ-Ÿ' -]+$/;
   //fonction de l'input lastName
   $('#lastName').blur(function(){
     //valeur de lastName
@@ -28,7 +30,7 @@ $(function(){
   });
   $('#birthDate').blur(function(){
     let birthDate = $(this).val();
-    if (regexNumber.test(birthDate)){
+    if (regexDate.test(birthDate)){
       $(this).css('border','2px solid green');
     } else{
       $(this).css('border','2px solid red');
@@ -38,7 +40,7 @@ $(function(){
   });
   $('#placeOfBirth').blur(function(){
     let placeOfBirth = $(this).val();
-    if (regexName.test(placeOfBirth)){
+    if (regexCity.test(placeOfBirth)){
       $(this).css('border','2px solid green');
     } else{
       $(this).css('border','2px solid red');
@@ -58,7 +60,7 @@ $(function(){
   });
   $('#company').blur(function(){
     let company = $(this).val();
-    if (regexName.test(company)){
+    if (regexCompany.test(company)){
       $(this).css('border','2px solid green');
     } else {
       $(this).css('border','2px solid red');
@@ -69,6 +71,7 @@ $(function(){
   //au clique sur le bouton Valider
   $('#validate').click(function(){
     //si les inputs sont correctement remplis, on prend les valeurs de ces derniers pour les faire apparaître sur une boite de dialogue alert().
+    //!= signifie différent, donc ici différent de vide ici = ''.
     if (($('#lastname').val()!= '') && ($('#firstName').val()!='') && ($('#birthDate').val()!='') && ($('#placeOfBirth').val()!='') && ($('#job').val()!='') && ($('#company').val()!='')){
       alert($('#lastName').val() + ' ' + $('#firstName').val() +  ', né(e) le ' + $('#birthDate').val() +  ' à ' + $('#placeOfBirth').val() + ', actuellement ' + $('#job').val() + ' à ' + $('#company').val());
     }  else{
@@ -76,4 +79,3 @@ $(function(){
     }
   });
 });
-//VOIR AVEC AUDREY POUR UN INPUT DATE ET COMMENT L'INTÉGRER AU JQUERY + LUI DDER CE QUE VEUT DIRE .VAL()!='' + VOIR LA REGEXNUMBER.

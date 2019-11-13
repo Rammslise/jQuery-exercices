@@ -18,7 +18,8 @@
     </p>
     <p>
       <label for="birthDate">Votre date de naissance :</label>
-      <input type="text" name="birthDate" id="birthDate" required placeholder="00/00/0000" />
+      <!-- type="date" ne marche pas sur tous les navigateus web, de plus cela sera écrit en date anglaise -->
+      <input type="text" name="birthDate" id="birthDate" placeholder="00/00/0000"/>
       <span class="validity"></span>
     </p>
     <label for="placeOfBirth">Votre lieu de naissance :</label>
@@ -32,7 +33,7 @@
       <input type="text" name="company" id="company" placeholder="Champ obligatoire" />
     </p>
   </form>
-  
+
   <input type="button" name="validate" id="validate" value="Valider" />
 
   <script src="assets/js/jquery-3.4.1.js"></script>
